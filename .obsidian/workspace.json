@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Plan de trabajo/Etapas.md",
+                "file": "Bitácora/Notas Santi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Etapas"
+              "title": "Notas Santi"
             }
           }
         ]
@@ -201,7 +201,10 @@
   },
   "active": "de5804a379291d05",
   "lastOpenFiles": [
+    "Bitácora/Notas Lauti.md",
+    "Bitácora/Notas Santi.md",
     "Desarrollo/Propuesta de plugin.md",
+    "Bitácora",
     "Plan de trabajo/Etapas.md",
     "Plan de trabajo",
     "Welcome.md",
