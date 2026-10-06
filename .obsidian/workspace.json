@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Desarrollo/Propuesta Commits.md",
+                "file": "Bitácora/Notas Lauti.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Propuesta Commits"
+              "title": "Notas Lauti"
             }
           }
         ]
@@ -201,8 +201,8 @@
   },
   "active": "de5804a379291d05",
   "lastOpenFiles": [
-    "Sandbox/¿Cómo usar?.md",
     "Desarrollo/Propuesta Commits.md",
+    "Sandbox/¿Cómo usar?.md",
     "Bitácora/Notas Lauti.md",
     "Desarrollo/Propuesta de plugin.md",
     "Welcome.md",
