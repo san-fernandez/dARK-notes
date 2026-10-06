@@ -17,7 +17,7 @@ Las claves de diseño para el nuevo plugin serán:
     - el identificador OAI (_OAI Identifier_) del artículo, cosechado o predicho a partir de la configuración de OJS; o
         
     - la URL pública del artículo.
-        
+    
 - **Exposición del ARK:** el identificador asignado será visible en:
     
     - la página del artículo (mediante un enlace);
@@ -25,9 +25,8 @@ Las claves de diseño para el nuevo plugin serán:
     - los metadatos HTML (`DC.Identifier.ark`);
         
     - el proveedor OAI-PMH de OJS (en `dc:identifier` o campo equivalente).
-        
-- **Comunicación:** siempre será iniciada desde el plugin hacia el nodo central de dARK.
     
+- **Comunicación:** siempre será iniciada desde el plugin hacia el nodo central de dARK.
 
 ---
 
@@ -48,7 +47,6 @@ Responsable de:
 - Cálculo del identificador OAI.
     
 - Registro de operaciones.
-    
 
 ### Adaptadores (OJS 3.3, 3.4 y 3.5)
 
@@ -61,7 +59,6 @@ Responsables de:
 - Hooks específicos de cada versión.
     
 - Ruteo y compatibilidad con cada versión de OJS.
-    
 
 ### Autenticación
 
@@ -72,7 +69,6 @@ La autenticación se realizará mediante:
 - Prefijo ARK.
     
 - API Key.
-    
 
 Los tres valores serán emitidos por LA Referencia y serán válidos para todas las versiones de OJS.
 
@@ -116,7 +112,7 @@ Documento acordado con LA Referencia que define:
     - API Key.
         
     - URL del resolver.
-        
+    
 - Almacenamiento del ARK asociado a cada artículo.
     
 - Visualización del ARK como enlace en la página del artículo.
@@ -137,9 +133,8 @@ Documento acordado con LA Referencia que define:
     - conflictos;
         
     - duplicados.
-        
-- Aplicación de la importación y registro de resultados.
     
+- Aplicación de la importación y registro de resultados.
 
 ### Entrega 3 – Asignación de ARK
 
@@ -152,7 +147,7 @@ Documento acordado con LA Referencia que define:
     - publicación continua;
         
     - publicación por número.
-        
+    
 - En publicaciones por número, posibilidad de reserva o registro en lote para todos los artículos del número.
     
 - Registro posterior de:
@@ -160,18 +155,16 @@ Documento acordado con LA Referencia que define:
     - URL de acceso;
         
     - identificador OAI (si corresponde).
-        
+    
 - Asignación individual y masiva para artículos publicados sin ARK.
     
 - Tarea periódica de sincronización para relevar el estado de las asignaciones y actualizaciones pendientes.
     
 - Gestión de errores y reintentos.
-    
 
 ### Entrega 4 – Actualización de registros L1 y L2
 
 - Envío automático de actualizaciones cuando cambian los metadatos de un artículo con ARK.
-    
 
 ### Entrega 5 – Cierre del ciclo de vida
 
@@ -182,7 +175,6 @@ Documento acordado con LA Referencia que define:
 - Tratamiento de nuevas versiones de un artículo.
     
 - Registro de operaciones para auditoría.
-    
 
 ### Entrega 6 – Piloto y documentación
 
@@ -193,7 +185,6 @@ Documento acordado con LA Referencia que define:
 - Documentación de instalación, configuración y uso.
     
 - Liberación del prototipo (**versión 1.beta**).
-    
 
 ---
 
@@ -277,7 +268,6 @@ El presupuesto estimado para implementar el desarrollo propuesto será de:
 - **2 pagos por desarrollador**
     
 - **USD 5.600 en total**
-    
 
 La forma de pago será a mes vencido, en dólares estadounidenses, contra factura y mediante transferencia bancaria a cada miembro del equipo de desarrollo.
 
