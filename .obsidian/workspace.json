@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Desarrollo/dARKCore.md",
+                "file": "Desarrollo/Propuesta de plugin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "dARKCore"
+              "title": "Propuesta de plugin"
             }
           }
         ]
@@ -201,6 +201,9 @@
   },
   "active": "de5804a379291d05",
   "lastOpenFiles": [
+    "Desarrollo/Propuesta Commits.md",
+    "Desarrollo/Propuesta de plugin.md",
+    "Desarrollo/dARKCore.md",
     "Desarrollo/Configuración, asignación y exposición.md",
     "Desarrollo/Arquitectura del plugin.md",
     "dARK/Qué es dARK.md",
@@ -217,9 +220,6 @@
     "Bitácora/Notas Santi.md.tmp.11324.54052ba7b6de",
     "Desarrollo/Importación por CSV.md.tmp.11324.d9d297ecd2aa",
     "Desarrollo/Configuración, asignación y exposición.md.tmp.11324.f38143854a8e",
-    "Desarrollo/dARKCore.md",
-    "Desarrollo/Propuesta Commits.md",
-    "Desarrollo/Propuesta de plugin.md",
     "Desarrollo/Wrappers OJS 3.3, 3.4 y 3.5.md",
     "Pendientes/Fase 2 y extensiones.md",
     "Desarrollo/Wrappers OJS 3.3, 3.4 y 3.5.md.tmp.11324.0241577643d5",
