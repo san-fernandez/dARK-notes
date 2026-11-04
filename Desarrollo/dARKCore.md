@@ -1,5 +1,3 @@
-# dARKCore
-
 Librería PHP (`sedici/dark-core`, namespace `DARKCore\`, PSR-4 en `src/`) con la lógica de dARK que no depende de OJS. **Requiere PHP ≥ 7.4.** Ojo con OJS 3.3; ver [[Pendientes y dudas abiertas#10. Decisiones internas pendientes (equipo)]].
 
 El wrapper la carga con `bootstrap.php`: usa `vendor/autoload.php` si existe y, si no, un autoloader propio sobre `dARKCore/src/`.
