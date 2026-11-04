@@ -1,3 +1,7 @@
+> [!info] Propuesta original (versión del 28/09/2026)
+> Es la propuesta aprobada; no refleja el estado actual. Para el estado y los cambios ver [[Estado del proyecto]], [[Plan de implementación]] y [[Pendientes y dudas abiertas]].
+> Diferencias ya conocidas con la propuesta: la autenticación probablemente no sea por API key (ver [[API del minter#Autenticación]]); la metaetiqueta sale como `DC.Identifier.dARK`, no `.ark`; los anexos del plan (decisiones, supuestos, riesgos, Fase 2) están en [[Fase 2 y extensiones]] y [[Pedidos a LA Referencia]].
+
 ## 1. Objetivo y alcance
 
 Se pretende implementar un prototipo para OJS que permita asignar identificadores dARK (_Decentralized Archival Resource Key_) a artículos publicados o por publicar. Este prototipo será puesto a prueba en al menos dos instituciones para validar su funcionamiento.
@@ -9,23 +13,23 @@ El proyecto desarrollará, en **11 semanas de trabajo** (del 28/09/2026 al 11/12
 Las claves de diseño para el nuevo plugin serán:
 
 - **Objeto a identificar:** se asignarán identificadores a artículos aceptados o publicados. No se asignarán ARK a envíos no aceptados, números ni galeradas.
-    
+
 - **Momento de asignación:** configurable por revista; podrá realizarse antes de la publicación (para incluir el ARK en las galeradas) o después de ella.
-    
+
 - **Clave de vinculación:** según el caso, podrá utilizarse:
-    
+
     - el identificador OAI (_OAI Identifier_) del artículo, cosechado o predicho a partir de la configuración de OJS; o
-        
+
     - la URL pública del artículo.
-    
+
 - **Exposición del ARK:** el identificador asignado será visible en:
-    
+
     - la página del artículo (mediante un enlace);
-        
+
     - los metadatos HTML (`DC.Identifier.ark`);
-        
+
     - el proveedor OAI-PMH de OJS (en `dc:identifier` o campo equivalente).
-    
+
 - **Comunicación:** siempre será iniciada desde el plugin hacia el nodo central de dARK.
 
 ---
@@ -39,13 +43,13 @@ El plugin se compone de un núcleo común y tres adaptadores, uno por versión d
 Responsable de:
 
 - Lógica de negocio.
-    
+
 - Cliente de la API central.
-    
+
 - Validaciones.
-    
+
 - Cálculo del identificador OAI.
-    
+
 - Registro de operaciones.
 
 ### Adaptadores (OJS 3.3, 3.4 y 3.5)
@@ -53,11 +57,11 @@ Responsable de:
 Responsables de:
 
 - Integración con la interfaz.
-    
+
 - Acceso a datos.
-    
+
 - Hooks específicos de cada versión.
-    
+
 - Ruteo y compatibilidad con cada versión de OJS.
 
 ### Autenticación
@@ -65,9 +69,9 @@ Responsables de:
 La autenticación se realizará mediante:
 
 - UUID de revista.
-    
+
 - Prefijo ARK.
-    
+
 - API Key.
 
 Los tres valores serán emitidos por LA Referencia y serán válidos para todas las versiones de OJS.
@@ -87,79 +91,79 @@ Cada entrega se liberará para OJS 3.3, 3.4 y 3.5.
 Documento acordado con LA Referencia que define:
 
 - Formato del CSV de importación.
-    
+
 - Endpoints de la API central.
-    
+
 - Esquema de autenticación (UUID de revista, prefijo ARK y API Key).
-    
+
 - Regla de construcción del identificador OAI futuro y su validación por parte de LA Referencia.
-    
+
 - Reglas de validación de duplicados.
-    
+
 - Formato de las actualizaciones de metadatos, incluido el cambio de host.
-    
+
 
 ### Entrega 1 – Núcleo y plugin base
 
 - Núcleo común y adaptadores para las tres versiones de OJS.
-    
+
 - Configuración por revista:
-    
+
     - UUID.
-        
+
     - Prefijo ARK.
-        
+
     - API Key.
-        
+
     - URL del resolver.
-    
+
 - Almacenamiento del ARK asociado a cada artículo.
-    
+
 - Visualización del ARK como enlace en la página del artículo.
-    
+
 - Exposición en metadatos HTML y en OAI-PMH.
-    
+
 
 ### Entrega 2 – Importación por CSV
 
 - Carga de pares `(OAI Identifier, ARK)`.
-    
+
 - Validación previa sin aplicar cambios.
-    
+
 - Reporte de:
-    
+
     - artículos no encontrados;
-        
+
     - conflictos;
-        
+
     - duplicados.
-    
+
 - Aplicación de la importación y registro de resultados.
 
 ### Entrega 3 – Asignación de ARK
 
 - Reserva de ARK al nodo _minter_ (sandbox), antes o después de la publicación según la configuración de la revista.
-    
+
 - Ejecución automática o manual.
-    
+
 - Soporte para distintos ciclos editoriales:
-    
+
     - publicación continua;
-        
+
     - publicación por número.
-    
+
 - En publicaciones por número, posibilidad de reserva o registro en lote para todos los artículos del número.
-    
+
 - Registro posterior de:
-    
+
     - URL de acceso;
-        
+
     - identificador OAI (si corresponde).
-    
+
 - Asignación individual y masiva para artículos publicados sin ARK.
-    
+
 - Tarea periódica de sincronización para relevar el estado de las asignaciones y actualizaciones pendientes.
-    
+
 - Gestión de errores y reintentos.
 
 ### Entrega 4 – Actualización de registros L1 y L2
@@ -169,21 +173,21 @@ Documento acordado con LA Referencia que define:
 ### Entrega 5 – Cierre del ciclo de vida
 
 - Gestión de ARK reservados cuyos artículos no llegan a publicarse.
-    
+
 - Tratamiento de artículos despublicados o retractados.
-    
+
 - Tratamiento de nuevas versiones de un artículo.
-    
+
 - Registro de operaciones para auditoría.
 
 ### Entrega 6 – Piloto y documentación
 
 - Prueba piloto con revistas reales en las tres versiones de OJS.
-    
+
 - Corrección de incidencias detectadas.
-    
+
 - Documentación de instalación, configuración y uso.
-    
+
 - Liberación del prototipo (**versión 1.beta**).
 
 ---
@@ -193,13 +197,13 @@ Documento acordado con LA Referencia que define:
 A continuación se expresan algunas funcionalidades adicionales para discutir en futuros desarrollos:
 
 - Permitir el registro retrospectivo de ARK para todos los artículos de un número ya publicado.
-    
+
 - Permitir el registro de ARK para números (_issues_).
-    
+
 - Permitir la asignación de dARK para artículos prerregistrados mediante ISSN.
-    
+
 - Integración con marcado XML-JATS, prevista para una fase posterior.
-    
+
 
 ---
 
@@ -263,11 +267,11 @@ Ambos desarrolladores tendrán dedicación completa al proyecto.
 
 El presupuesto estimado para implementar el desarrollo propuesto será de:
 
-- **USD 1.400 por desarrollador y por mes**
-    
+- **USD 1.500 por desarrollador y por mes**
+
 - **2 pagos por desarrollador**
-    
-- **USD 5.600 en total**
+
+- **USD 6.000 en total**
 
 La forma de pago será a mes vencido, en dólares estadounidenses, contra factura y mediante transferencia bancaria a cada miembro del equipo de desarrollo.
 

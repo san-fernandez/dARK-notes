@@ -26,16 +26,16 @@ workspace/
 
 Todos los entornos vienen preconfigurados con usuario **admin** y clave **admin**:
 
-- OJS 3.3 (PHP 7.3): [http://localhost:8033](http://localhost:8033) (Base de datos: `ojs_33`)
-    
+- OJS 3.3 (PHP 7.4; la doc del sandbox dice 7.3, pero el `Dockerfile` usa `php:7.4-apache`): [http://localhost:8033](http://localhost:8033) (Base de datos: `ojs_33`)
+
 - OJS 3.4 (PHP 8.0): [http://localhost:8034](http://localhost:8034) (Base de datos: `ojs_34`)
-    
+
 - OJS 3.5 (PHP 8.2): [http://localhost:8035](http://localhost:8035) (Base de datos: `ojs_35`)
-    
+
 - phpMyAdmin: [http://localhost:8080](http://localhost:8080) (login: `root/root` u `ojs/ojs`)
-    
+
 - MySQL 8.0: `localhost:3306` (usuario: `ojs`, clave: `ojs`)
-    
+
 
 
 ---
@@ -44,19 +44,19 @@ Todos los entornos vienen preconfigurados con usuario **admin** y clave **admin*
 Se controlan desde la raíz de `ojs-sandbox` mediante `make`:
 
 - `make init`: Da permisos a scripts, crea carpetas y vincula los worktrees.
-    
+
 - `make up-all`: Levanta MySQL, phpMyAdmin y las tres versiones de OJS.
-    
+
 - `make up-33`: Levanta solo OJS 3.3, MySQL y phpMyAdmin (ahorra RAM y CPU).
-    
+
 - `make up-34`: Levanta solo OJS 3.4, MySQL y phpMyAdmin.
-    
+
 - `make up-35`: Levanta solo OJS 3.5, MySQL y phpMyAdmin.
-    
+
 - `make down`: Detiene todos los contenedores sin borrar los datos.
-    
+
 - `make clean`: Borra los contenedores y el volumen de datos para volver al estado inicial de los seeds.
-    
+
 - `make snapshot-33`, `make snapshot-34`, `make snapshot-35`: Guarda el estado actual de la base de datos en `fixtures/sql/` para versionarlo en Git.
 
 ---
@@ -69,11 +69,11 @@ Un **git worktree** permite tener múltiples ramas de un mismo repositorio Git a
 En este proyecto:
 
 - `dark-worktrees/ojs33` contiene el checkout de la rama `dev-3_3`.
-    
+
 - `dark-worktrees/ojs34` contiene el checkout de la rama `dev-3_4`.
-    
+
 - `dark-worktrees/ojs35` contiene el checkout de la rama `dev-3_5`.
-    
+
 
 ### ¿Cómo se conectan al Sandbox?
 
@@ -117,3 +117,41 @@ docker compose exec ojs33 rm -rf \
 ```bash
 docker compose logs -f ojs33
 ```
+#### 6. Ejecutar tareas programadas
+
+Para probar las tareas en segundo plano (sincronización de ARK desde la Entrega 3):
+
+```bash
+make cron-33   # OJS 3.3: tools/runScheduledTasks.php con scheduledTasks.xml de Acron
+make cron-35   # OJS 3.5: Laravel Scheduler
+```
+
+No hay un target `cron-34`. Si hace falta, se corre igual que en 3.3, dentro del contenedor `ojs34`.
+
+#### 7. Verificar OAI-PMH
+
+```bash
+curl -s "http://localhost:8034/index.php/index/oai?verb=Identify"
+# Registro de un artículo (para ver el dc:identifier con el ARK):
+curl -s "http://localhost:8034/index.php/<revista>/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:<repository_id>:article/<id>"
+```
+
+El `repository_id` de cada versión está en `fixtures/configs/config.ojs3x.php`, sección `[oai]`.
+
+#### 8. Probar la importación CSV
+
+Los CSV de prueba están en `test-data/` de cada worktree (válido, con BOM y `;`, cabecera inválida, con errores, etc.). Ver [[Importación por CSV]].
+
+---
+## Problemas frecuentes
+
+- **Puerto ocupado** (3306, 8033…): cambiar `PORT_MYSQL`, `PORT_OJS33`, etc. en `.env`.
+- **Error 500 en el primer arranque** después de `make clean`: MySQL todavía está cargando los seeds. Esperar a que `db` figure `(healthy)` en `docker compose ps`.
+- **No se ven los cambios en plantillas o traducciones:** limpiar la caché (paso 4).
+
+---
+## Mock del minter (pendiente)
+
+`docs/INFRAESTRUCTURA.md` prevé un mock de la API de dARK (FastAPI) para la Etapa 3. **Todavía no existe.** Ver [[Deuda técnica#Sandbox]] y [[API del minter]].
+
+Relacionado: [[Arquitectura del plugin]] · [[Propuesta Commits]]

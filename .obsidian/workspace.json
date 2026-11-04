@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bitácora/Notas Lauti.md",
+                "file": "dARK/Qué es dARK.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notas Lauti"
+              "title": "Qué es dARK"
             }
           }
         ]
@@ -201,19 +201,39 @@
   },
   "active": "de5804a379291d05",
   "lastOpenFiles": [
-    "Bitácora/Notas Santi.md",
-    "Desarrollo/Propuesta Commits.md",
+    "dARK/API del minter.md",
     "Bitácora/Notas Lauti.md",
-    "Desarrollo/Propuesta de plugin.md",
+    "Bitácora/Notas Santi.md",
     "Sandbox/¿Cómo usar?.md",
+    "Reuniones/2026-11-04 Reunión con LA Referencia.md",
+    "Pendientes/Pendientes y dudas abiertas.md",
+    "Desarrollo/Arquitectura del plugin.md",
+    "dARK/Qué es dARK.md",
+    "Proyecto/sedPY00Do",
+    "Sandbox/¿Cómo usar?.md.tmp.11324.70fe6fc6c32a",
+    "Desarrollo/Importación por CSV.md",
+    "Desarrollo/Propuesta Commits.md.tmp.11324.3a6a99c85ad5",
+    "Bitácora/Notas Santi.md.tmp.11324.54052ba7b6de",
+    "Desarrollo/Importación por CSV.md.tmp.11324.d9d297ecd2aa",
+    "Desarrollo/Configuración, asignación y exposición.md",
+    "Desarrollo/Configuración, asignación y exposición.md.tmp.11324.f38143854a8e",
+    "Desarrollo/dARKCore.md",
+    "Desarrollo/Propuesta Commits.md",
+    "Desarrollo/Propuesta de plugin.md",
+    "Desarrollo/Wrappers OJS 3.3, 3.4 y 3.5.md",
+    "Pendientes/Fase 2 y extensiones.md",
+    "Desarrollo/Wrappers OJS 3.3, 3.4 y 3.5.md.tmp.11324.0241577643d5",
+    "Desarrollo/dARKCore.md.tmp.11324.fb0a7c7b976a",
+    "Desarrollo/Arquitectura del plugin.md.tmp.11324.1ae63c2afdc1",
+    "Inicio.md",
+    "dARK/API del minter.md.tmp.11324.654f2644daba",
+    "Proyecto/Plan de implementación.md",
+    "Proyecto/Pedidos a LA Referencia.md",
+    "Pendientes/Deuda técnica.md",
+    "Proyecto/Estado del proyecto.md",
     "conflict-files-obsidian-git.md",
     "Plan de trabajo/Etapas.md",
     "Sandbox/Guía de desarrollo.md",
-    "Untitled",
-    "Welcome.md",
-    "Sandbox",
-    "Bitácora",
-    "Plan de trabajo",
-    "Desarrollo"
+    "Welcome.md"
   ]
 }
