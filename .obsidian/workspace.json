@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dARK/Qué es dARK.md",
+                "file": "Desarrollo/dARKCore.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Qué es dARK"
+              "title": "dARKCore"
             }
           }
         ]
@@ -201,21 +201,21 @@
   },
   "active": "de5804a379291d05",
   "lastOpenFiles": [
+    "Desarrollo/Configuración, asignación y exposición.md",
+    "Desarrollo/Arquitectura del plugin.md",
+    "dARK/Qué es dARK.md",
     "dARK/API del minter.md",
     "Bitácora/Notas Lauti.md",
     "Bitácora/Notas Santi.md",
     "Sandbox/¿Cómo usar?.md",
     "Reuniones/2026-11-04 Reunión con LA Referencia.md",
     "Pendientes/Pendientes y dudas abiertas.md",
-    "Desarrollo/Arquitectura del plugin.md",
-    "dARK/Qué es dARK.md",
     "Proyecto/sedPY00Do",
     "Sandbox/¿Cómo usar?.md.tmp.11324.70fe6fc6c32a",
     "Desarrollo/Importación por CSV.md",
     "Desarrollo/Propuesta Commits.md.tmp.11324.3a6a99c85ad5",
     "Bitácora/Notas Santi.md.tmp.11324.54052ba7b6de",
     "Desarrollo/Importación por CSV.md.tmp.11324.d9d297ecd2aa",
-    "Desarrollo/Configuración, asignación y exposición.md",
     "Desarrollo/Configuración, asignación y exposición.md.tmp.11324.f38143854a8e",
     "Desarrollo/dARKCore.md",
     "Desarrollo/Propuesta Commits.md",
